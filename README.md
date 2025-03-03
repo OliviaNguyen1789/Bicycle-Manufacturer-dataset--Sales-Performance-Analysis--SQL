@@ -37,6 +37,7 @@ The analysis focuses on sales performance across subcategories and territories, 
 
 <img width="740" alt="Screen Shot 2025-03-04 at 10 00 37 AM" src="https://github.com/user-attachments/assets/fd855975-bf37-45dc-8a03-36a95b601fba" />
 
+The data shows that Road, Mountain, and Touring Bikes generate the highest revenue and sales volume. Among accessories, Helmets, Jerseys, and Tires have the highest unit sales. While overall sales have remained relatively stable across the quarters, there was a sharp decline in Q2 2014, primarily driven by a significant drop in June 2014.
 
 ### Query 02: Calculate % YoY growth rate by SubCategory and release top 3 catergories with highest grow rate
 
@@ -45,6 +46,7 @@ The analysis focuses on sales performance across subcategories and territories, 
 <img width="1178" alt="Screen Shot 2025-03-04 at 10 03 19 AM" src="https://github.com/user-attachments/assets/184ae7a6-1d68-4180-a42b-d33fcd9f514e" />
 
 <img width="727" alt="Screen Shot 2025-03-04 at 10 03 37 AM" src="https://github.com/user-attachments/assets/8e757fe5-f350-45c5-a286-4466e528b263" />
+
 
 
 ### Query 03: Ranking Top 3 TeritoryID with biggest Order quantity of every year. 
