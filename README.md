@@ -47,6 +47,7 @@ The data shows that Road, Mountain, and Touring Bikes generate the highest reven
 
 <img width="835" alt="Screen Shot 2025-03-04 at 11 31 33 AM" src="https://github.com/user-attachments/assets/654a822d-9d8e-4b26-b550-ef9ddf6ddb54" />
 
+From 2011 to 2014, the accessories category saw the highest year-over-year volume growth, led by Mountain Frames (2012), Socks (2013), and Road Frames (2012), which surged by 521%, 421%, and 389%, respectively. This significant growth can probably stem from expansion into new markets, product improvements, or a shift in consumer preferences. Understanding the key factors behind this trend is essential for sustaining growth and replicating success across other product lines.
 
 ### Query 03: Ranking Top 3 TeritoryID with biggest Order quantity of every year. 
 
