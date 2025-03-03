@@ -41,12 +41,11 @@ The data shows that Road, Mountain, and Touring Bikes generate the highest reven
 
 ### Query 02: Calculate % YoY growth rate by SubCategory and release top 3 catergories with highest grow rate
 
-<img width="1214" alt="Screen Shot 2025-03-04 at 10 02 19 AM" src="https://github.com/user-attachments/assets/955ebd30-dff3-4d16-9823-4aceec2bf1b9" />
+<img width="1003" alt="Screen Shot 2025-03-04 at 11 29 43 AM" src="https://github.com/user-attachments/assets/8bdc9a98-79f9-4235-8a45-587892614418" />
 
-<img width="1178" alt="Screen Shot 2025-03-04 at 10 03 19 AM" src="https://github.com/user-attachments/assets/184ae7a6-1d68-4180-a42b-d33fcd9f514e" />
+<img width="1003" alt="Screen Shot 2025-03-04 at 11 30 21 AM" src="https://github.com/user-attachments/assets/96bacfc0-505a-4049-abcc-a571621e2c6a" />
 
-<img width="727" alt="Screen Shot 2025-03-04 at 10 03 37 AM" src="https://github.com/user-attachments/assets/8e757fe5-f350-45c5-a286-4466e528b263" />
-
+<img width="835" alt="Screen Shot 2025-03-04 at 11 31 33 AM" src="https://github.com/user-attachments/assets/654a822d-9d8e-4b26-b550-ef9ddf6ddb54" />
 
 
 ### Query 03: Ranking Top 3 TeritoryID with biggest Order quantity of every year. 
