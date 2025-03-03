@@ -16,26 +16,25 @@ IV. [Final Conclusion & Recommendations](#iv-final-conclusion--recommendations)
 
 ## I. Introduction
 
-This project analyzes an e-commerce dataset using advanced SQL techniques on Google BigQuery, including sliding windows, CTEs, and date-time manipulation.
-The objectives are:
-- Improving the company's revenue.
-- Understanding customer behavior to optimize conversion rates 
+This project explores a Bicycle Manufacturer dataset using advanced SQL techniques in Google BigQuery, including sliding windows, common table expressions (CTEs), and date-time manipulation. 
 
-This analysis will help the Marketing and Sales teams make strategic, data-driven decisions to enhance business outcomes.
+The analysis focuses on sales performance across subcategories and territories, inventory management, and customer retention. The insights gained will empower stakeholders to make informed strategic decisions and enhance overall business operations.
 
 ## II. Dataset Description
 
-- Source: The e-commerce dataset is stored in a public Google BigQuery dataset.
-  
+- Source: The Bicycle Manufacturer dataset is stored in a public Google BigQuery dataset named "adventureworks2019"
+- Data Structure: (bổ sung schema trong power BI)
 
--  Data Structure:
+
 
 
 
 ## III. Exploring the Dataset
 
 ### Query 01: Calculate Quantity of items, Sales value and Order quantity by each Subcategory in  last 12 months
+<img width="812" alt="Screen Shot 2025-03-04 at 9 58 05 AM" src="https://github.com/user-attachments/assets/20837cb0-1a83-4f81-ac84-f8d6a0e80a81" />
 
+<img width="615" alt="Screen Shot 2025-03-04 at 9 58 27 AM" src="https://github.com/user-attachments/assets/9c3100ca-cd45-450b-97fb-68a0e5b9659d" />
 
 ### Query 02: Calculate % YoY growth rate by SubCategory and release top 3 catergories with highest grow rate
 
