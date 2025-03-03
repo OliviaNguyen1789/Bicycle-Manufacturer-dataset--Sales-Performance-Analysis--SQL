@@ -55,6 +55,8 @@ From 2011 to 2014, the accessories category saw the highest year-over-year volum
 
 <img width="543" alt="Screen Shot 2025-03-04 at 10 05 01 AM" src="https://github.com/user-attachments/assets/c837acc9-2a9d-409b-9a73-1ed0bd231ce9" />
 
+Regarding geographic performance, the top three territories with the highest sales orders from 2011 to 2014 were TerritoryIDs 4, 6, and 1, maintaining their leading positions throughout the period. While overall order volume experienced significant growth, 2014 saw a sharp decrease. 
+It is essential to examine the causes of this downturn and implement appropriate solutions. Additionally, the company should consider replicating the successful strategies of these territories in other regions.
 
 ### Query 04: Calculate Total Discount Cost belongs to Seasonal Discount for each SubCategory
 
