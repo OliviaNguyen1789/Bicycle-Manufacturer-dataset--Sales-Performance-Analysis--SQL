@@ -60,18 +60,24 @@ It is essential to examine the causes of this downturn and implement appropriate
 
 ### Query 04: Calculate Total Discount Cost belongs to Seasonal Discount for each SubCategory
 
-<img width="801" alt="Screen Shot 2025-03-04 at 10 06 27 AM" src="https://github.com/user-attachments/assets/61189edb-c386-4f92-87bf-d6412fb99f56" />
+<img width="846" alt="Screen Shot 2025-03-04 at 1 29 31 PM" src="https://github.com/user-attachments/assets/ddefab41-302c-4add-ab28-f610caaa815c" />
 
-<img width="465" alt="Screen Shot 2025-03-04 at 10 06 48 AM" src="https://github.com/user-attachments/assets/50e4bf01-19ee-4239-8621-e789db6f7eae" />
+<img width="692" alt="Screen Shot 2025-03-04 at 1 30 27 PM" src="https://github.com/user-attachments/assets/1c7a64ad-c0ae-4ac7-9186-e213ead3e0c0" />
 
+The company ran the Seasonal Discounts campaign exclusively for the Helmets subcategory in 2012 and 2013. In 2013, this promotion resulted in a 29% increase in helmet sales compared to 2012. However, the total discount nearly doubled, increasing from $827.65 in 2012 to $1,606.04 in 2013.
 
 ### Query 05: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis) 
 
-<img width="843" alt="Screen Shot 2025-03-04 at 10 09 01 AM" src="https://github.com/user-attachments/assets/8e17e921-d497-4b96-9713-b7648763cf80" />
+<img width="816" alt="Screen Shot 2025-03-04 at 2 09 46 PM" src="https://github.com/user-attachments/assets/eaaa41cf-abd9-4561-8b09-a2b1e907f976" />
 
-<img width="835" alt="Screen Shot 2025-03-04 at 10 09 44 AM" src="https://github.com/user-attachments/assets/4e62165a-94bf-4a98-b6eb-0ca0e36e133e" />
+<img width="931" alt="Screen Shot 2025-03-04 at 2 10 27 PM" src="https://github.com/user-attachments/assets/1322bf5f-244f-4085-a7ec-9a57d2b2066d" />
 
-<img width="278" alt="Screen Shot 2025-03-04 at 10 10 58 AM" src="https://github.com/user-attachments/assets/6b54e00d-91db-4d2e-bd4c-e496e5439de3" />
+<img width="886" alt="Screen Shot 2025-03-04 at 2 10 46 PM" src="https://github.com/user-attachments/assets/43c2107b-cd7a-4e64-9277-a8c90c3d6a28" />
+
+<img width="467" alt="Screen Shot 2025-03-04 at 2 13 51 PM" src="https://github.com/user-attachments/assets/02e83b93-2d15-4edd-8b74-efc01a3536f1" />
+
+- The number of new customers fluctuated slightly in the first 5 months, then significantly declined in the following two months. 
+- Retention rates drop quickly across all cohorts, with only 2.83% of February's customers remaining after 1 month, and just 0.44% by month 5. This suggests most users don't find long-term value or engagement with the service.
 
 
 ### Query 06: Trend of Stock level & MoM diff % by all product in 2011. If % growth rate is null then 0.
@@ -80,7 +86,7 @@ It is essential to examine the causes of this downturn and implement appropriate
 
 <img width="668" alt="Screen Shot 2025-03-04 at 10 13 58 AM" src="https://github.com/user-attachments/assets/a311ebd1-2d6f-4122-8c8b-40fb73a51a91" />
 
-
+Nhập kho mạnh vào tháng 7 _+ 10
 
 ### Query 07: Calculate Ratio of Stock / Sales in 2011 by product name, by month
 
