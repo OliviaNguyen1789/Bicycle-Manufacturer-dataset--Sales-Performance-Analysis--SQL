@@ -39,6 +39,7 @@ The analysis focuses on sales performance across subcategories and territories, 
 
 The data shows that Road, Mountain, and Touring Bikes generate the highest revenue and sales volume. Among accessories, Helmets, Jerseys, and Tires have the highest unit sales. While overall sales have remained relatively stable across the quarters, there was a sharp decline in Q2 2014, primarily driven by a significant drop in June 2014.
 
+
 ### Query 02: Calculate % YoY growth rate by SubCategory and release top 3 catergories with highest grow rate
 
 <img width="1003" alt="Screen Shot 2025-03-04 at 11 29 43 AM" src="https://github.com/user-attachments/assets/8bdc9a98-79f9-4235-8a45-587892614418" />
@@ -49,6 +50,7 @@ The data shows that Road, Mountain, and Touring Bikes generate the highest reven
 
 From 2011 to 2014, the accessories category saw the highest year-over-year volume growth, led by Mountain Frames (2012), Socks (2013), and Road Frames (2012), which surged by 521%, 421%, and 389%, respectively. This significant growth can probably stem from expansion into new markets, product improvements, or a shift in consumer preferences. Understanding the key factors behind this trend is essential for sustaining growth and replicating success across other product lines.
 
+
 ### Query 03: Ranking Top 3 TeritoryID with biggest Order quantity of every year. 
 
 <img width="935" alt="Screen Shot 2025-03-04 at 10 04 42 AM" src="https://github.com/user-attachments/assets/1b44a1fe-6f08-4cc0-9931-dfc8777c99a0" />
@@ -58,6 +60,7 @@ From 2011 to 2014, the accessories category saw the highest year-over-year volum
 Regarding geographic performance, the top three territories with the highest sales orders from 2011 to 2014 were TerritoryIDs 4, 6, and 1, maintaining their leading positions throughout the period. While overall order volume experienced significant growth, 2014 saw a sharp decrease. 
 It is essential to examine the causes of this downturn and implement appropriate solutions. Additionally, the company should consider replicating the successful strategies of these territories in other regions.
 
+
 ### Query 04: Calculate Total Discount Cost belongs to Seasonal Discount for each SubCategory
 
 <img width="846" alt="Screen Shot 2025-03-04 at 1 29 31 PM" src="https://github.com/user-attachments/assets/ddefab41-302c-4add-ab28-f610caaa815c" />
@@ -65,6 +68,7 @@ It is essential to examine the causes of this downturn and implement appropriate
 <img width="692" alt="Screen Shot 2025-03-04 at 1 30 27 PM" src="https://github.com/user-attachments/assets/1c7a64ad-c0ae-4ac7-9186-e213ead3e0c0" />
 
 The company ran the Seasonal Discounts campaign exclusively for the Helmets subcategory in 2012 and 2013. In 2013, this promotion resulted in a 29% increase in helmet sales compared to 2012. However, the total discount nearly doubled, increasing from $827.65 in 2012 to $1,606.04 in 2013.
+
 
 ### Query 05: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis) 
 
@@ -86,8 +90,8 @@ The company ran the Seasonal Discounts campaign exclusively for the Helmets subc
 
 <img width="668" alt="Screen Shot 2025-03-04 at 10 13 58 AM" src="https://github.com/user-attachments/assets/a311ebd1-2d6f-4122-8c8b-40fb73a51a91" />
 
-Nhập kho mạnh vào tháng 7 _+ 10
-The data reveals significant stock level fluctuations across products in 2011. A consistent pattern emerges: large increases in July and October (often >100%), followed by steady decreases in subsequent months. This cyclical trend suggests potential issues with inventory management or supply chain efficiency. The company should investigate these dramatic swings to optimize stock levels, reduce holding costs, and ensure product availability during peak demand periods.
+In the last six months of 2011, product stock levels experienced frequent and significant fluctuations. Notably, inventory surged in October and July before sharply declining in the following months, indicating potential challenges in supply chain and inventory management efficiency. December stock declines across all products may be linked to year-end sales or reduced restocking due to seasonal trends.
+
 
 ### Query 07: Calculate Ratio of Stock / Sales in 2011 by product name, by month
 
@@ -97,7 +101,7 @@ The data reveals significant stock level fluctuations across products in 2011. A
 
 <img width="825" alt="Screen Shot 2025-03-04 at 10 15 41 AM" src="https://github.com/user-attachments/assets/3cef9e2e-6833-4f9a-84af-8ce39c288b18" />
 
-The stock-to-sales ratios reveal significant inventory imbalances across products. High-end mountain frames show excessive stock levels (ratios 10-27) compared to sales, while popular road bikes maintain healthier ratios (1.1-1.5). This suggests potential overproduction or slow turnover for certain mountain frames. The company should reassess its inventory management strategy, particularly for high-ratio items, to optimize stock levels and improve capital efficiency.
+The stock-to-sales ratio highlights inefficiencies in the company's inventory management. Low-selling products have excessively high ratios, driving up inventory costs, while high-selling products have low or zero ratios, increasing the risk of stockouts and lost sales. To enhance capital efficiency, the company should refine its inventory strategy, focusing on balancing stock levels.
 
 
 ### Query 08: Number of order and value at Pending status in 2014
@@ -114,3 +118,5 @@ In 2014, there were 224 pending orders with a total value of $3,873,579.01. This
 ## IV. Final Conclusion & Recommendations 
 
 This project leveraged Google BigQuery to analyze a bicycle manufacturer's dataset, uncovering crucial insights into sales trends, product performance, and operational efficiency. Key findings include the dominance of high-ticket bike sales complemented by accessory volumes, exceptional growth in specific subcategories, and consistent top-performing territories. The analysis revealed opportunities for improvement in inventory management, customer retention strategies, and order fulfillment processes. By harnessing big data analytics, this project provides a solid foundation for data-driven decision-making, enabling the company to optimize product mix, refine marketing strategies, and enhance operational efficiency. These insights equip the manufacturer to make informed strategic choices, potentially driving growth and competitiveness in the dynamic bicycle market.
+
+The data reveals significant stock level fluctuations across products in 2011. A consistent pattern emerges: large increases in July and October (often >100%), followed by steady decreases in subsequent months. This cyclical trend suggests potential issues with inventory management or supply chain efficiency. The company should investigate these dramatic swings to optimize stock levels, reduce holding costs, and ensure product availability during peak demand periods.
