@@ -111,8 +111,7 @@ The stock-to-sales ratio highlights inefficiencies in the company's inventory ma
 
 <img width="545" alt="Screen Shot 2025-03-04 at 10 16 13 AM" src="https://github.com/user-attachments/assets/ece49e92-bda6-41f2-80bc-6bc1f46aca62" />
 
-In 2014, there were 224 pending orders with a total value of $3,873,579.01. This high-value backlog suggests potential operational bottlenecks or capacity constraints. The average order value of $17,292.76 indicates these are likely big-ticket items. Addressing these pending orders promptly could significantly impact revenue recognition and customer satisfaction. Further investigation into the causes of delays is recommended.
-
+In 2014, there were 224 pending orders totaling $3,873,579, with an average order value of $17,292.76. This  indicates that pending orders may involve bulk purchases or high-value transactions. Given the significant impact on revenue and customer satisfaction, it is essential to further investigate the factors causing delays.
 
 
 ## IV. Final Conclusion & Recommendations 
