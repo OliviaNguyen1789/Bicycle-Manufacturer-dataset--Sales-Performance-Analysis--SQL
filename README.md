@@ -87,6 +87,7 @@ The company ran the Seasonal Discounts campaign exclusively for the Helmets subc
 <img width="668" alt="Screen Shot 2025-03-04 at 10 13 58 AM" src="https://github.com/user-attachments/assets/a311ebd1-2d6f-4122-8c8b-40fb73a51a91" />
 
 Nhập kho mạnh vào tháng 7 _+ 10
+The data reveals significant stock level fluctuations across products in 2011. A consistent pattern emerges: large increases in July and October (often >100%), followed by steady decreases in subsequent months. This cyclical trend suggests potential issues with inventory management or supply chain efficiency. The company should investigate these dramatic swings to optimize stock levels, reduce holding costs, and ensure product availability during peak demand periods.
 
 ### Query 07: Calculate Ratio of Stock / Sales in 2011 by product name, by month
 
@@ -96,6 +97,8 @@ Nhập kho mạnh vào tháng 7 _+ 10
 
 <img width="825" alt="Screen Shot 2025-03-04 at 10 15 41 AM" src="https://github.com/user-attachments/assets/3cef9e2e-6833-4f9a-84af-8ce39c288b18" />
 
+The stock-to-sales ratios reveal significant inventory imbalances across products. High-end mountain frames show excessive stock levels (ratios 10-27) compared to sales, while popular road bikes maintain healthier ratios (1.1-1.5). This suggests potential overproduction or slow turnover for certain mountain frames. The company should reassess its inventory management strategy, particularly for high-ratio items, to optimize stock levels and improve capital efficiency.
+
 
 ### Query 08: Number of order and value at Pending status in 2014
 
@@ -104,8 +107,10 @@ Nhập kho mạnh vào tháng 7 _+ 10
 
 <img width="545" alt="Screen Shot 2025-03-04 at 10 16 13 AM" src="https://github.com/user-attachments/assets/ece49e92-bda6-41f2-80bc-6bc1f46aca62" />
 
+In 2014, there were 224 pending orders with a total value of $3,873,579.01. This high-value backlog suggests potential operational bottlenecks or capacity constraints. The average order value of $17,292.76 indicates these are likely big-ticket items. Addressing these pending orders promptly could significantly impact revenue recognition and customer satisfaction. Further investigation into the causes of delays is recommended.
 
 
 
 ## IV. Final Conclusion & Recommendations 
 
+This project leveraged Google BigQuery to analyze a bicycle manufacturer's dataset, uncovering crucial insights into sales trends, product performance, and operational efficiency. Key findings include the dominance of high-ticket bike sales complemented by accessory volumes, exceptional growth in specific subcategories, and consistent top-performing territories. The analysis revealed opportunities for improvement in inventory management, customer retention strategies, and order fulfillment processes. By harnessing big data analytics, this project provides a solid foundation for data-driven decision-making, enabling the company to optimize product mix, refine marketing strategies, and enhance operational efficiency. These insights equip the manufacturer to make informed strategic choices, potentially driving growth and competitiveness in the dynamic bicycle market.
