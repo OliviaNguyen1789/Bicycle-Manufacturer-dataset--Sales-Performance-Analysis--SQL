@@ -116,25 +116,18 @@ In 2014, there were 224 pending orders totaling $3,873,579, with an average orde
 
 ## IV. Final Conclusion & Recommendations 
 
-This project leveraged Google BigQuery to analyze a bicycle manufacturer's dataset, uncovering crucial insights into sales trends, product performance, and operational efficiency. Key findings include the dominance of high-ticket bike sales complemented by accessory volumes, exceptional growth in specific subcategories, and consistent top-performing territories. The analysis revealed opportunities for improvement in inventory management, customer retention strategies, and order fulfillment processes. By harnessing big data analytics, this project provides a solid foundation for data-driven decision-making, enabling the company to optimize product mix, refine marketing strategies, and enhance operational efficiency. These insights equip the manufacturer to make informed strategic choices, potentially driving growth and competitiveness in the dynamic bicycle market.
+This analysis provides valuable insights into sales performance across products and regions, inventory management, and customer retention. It enables the bicycle manufacturer to identify strengths and weaknesses, allowing them to leverage their strengths and minimize weaknesses to enhance overall business performance.
 
-The data reveals significant stock level fluctuations across products in 2011. A consistent pattern emerges: large increases in July and October (often >100%), followed by steady decreases in subsequent months. This cyclical trend suggests potential issues with inventory management or supply chain efficiency. The company should investigate these dramatic swings to optimize stock levels, reduce holding costs, and ensure product availability during peak demand periods.
+**Recommendations:**
 
-The data shows that Road, Mountain, and Touring Bikes generate the highest revenue and sales volume. Among accessories, Helmets, Jerseys, and Tires have the highest unit sales. While overall sales have remained relatively stable across the quarters, there was a sharp decline in Q2 2014, primarily driven by a significant drop in June 2014.
-The company ran the Seasonal Discounts campaign exclusively for the Helmets subcategory in 2012 and 2013. In 2013, this promotion resulted in a 29% increase in helmet sales compared to 2012. However, the total discount nearly doubled, increasing from $827.65 in 2012 to $1,606.04 in 2013.
+- Analyze the strategies that led to success in Territories 4, 6, and 1, and replicate them in underperforming regions to boost overall sales.
+- Reevaluate the effectiveness of promotional campaigns, such as the Seasonal Discounts for Helmets, to ensure they drive sales without causing a disproportionate increase in discount costs.
+- Prioritize customer retention by enhancing the customer experience and providing additional value after the initial purchase to reduce churn.
+- Focus on improving demand forecasting and optimizing just-in-time inventory cycles to reduce stock imbalances, lower holding costs, and avoid stockouts of high-demand items.
+- Conduct a thorough analysis to identify the causes of the sharp sales decline in Q2 2014 and address pending orders to implement prompt and effective solutions.
 
-From 2011 to 2014, the accessories category saw the highest year-over-year volume growth, led by Mountain Frames (2012), Socks (2013), and Road Frames (2012), which surged by 521%, 421%, and 389%, respectively. This significant growth can probably stem from expansion into new markets, product improvements, or a shift in consumer preferences. Understanding the key factors behind this trend is essential for sustaining growth and replicating success across other product lines.
 
-Regarding geographic performance, the top three territories with the highest sales orders from 2011 to 2014 were TerritoryIDs 4, 6, and 1, maintaining their leading positions throughout the period. While overall order volume experienced significant growth, 2014 saw a sharp decrease. 
-It is essential to examine the causes of this downturn and implement appropriate solutions. Additionally, the company should consider replicating the successful strategies of these territories in other regions.
 
-Retention:- The number of new customers fluctuated slightly in the first 5 months, then significantly declined in the following two months. 
-- Retention rates drop quickly across all cohorts, with only 2.83% of February's customers remaining after 1 month, and just 0.44% by month 5. This suggests most users don't find long-term value or engagement with the service.
 
-QUản lý hàng tồn kho:
-In the last six months of 2011, product stock levels experienced frequent and significant fluctuations. Notably, inventory surged in October and July before sharply declining in the following months, indicating potential challenges in supply chain and inventory management efficiency. December stock declines across all products may be linked to year-end sales or reduced restocking due to seasonal trends.
 
-The stock-to-sales ratio highlights inefficiencies in the company's inventory management. Low-selling products have excessively high ratios, driving up inventory costs, while high-selling products have low or zero ratios, increasing the risk of stockouts and lost sales. To enhance capital efficiency, the company should refine its inventory strategy, focusing on balancing stock levels.
 
-Spending status:
-In 2014, there were 224 pending orders totaling $3,873,579, with an average order value of $17,292.76. This  indicates that pending orders may involve bulk purchases or high-value transactions. Given the significant impact on revenue and customer satisfaction, it is essential to further investigate the factors causing delays.
