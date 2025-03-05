@@ -23,6 +23,8 @@ The analysis focuses on sales performance across subcategories and territories, 
 ## II. Dataset Description
 
 - Source: The Bicycle Manufacturer dataset is stored in a public Google BigQuery dataset named "adventureworks2019"
+  To access the dataset, we log in to your Google Cloud Platform, navigate to the BigQuery console and search the project "adventureworks2019".
+
 - Data Structure: (bổ sung schema trong power BI)
 
 
