@@ -1,4 +1,4 @@
-# -SQL-Sales-Performance-Analysis
+# [SQL] Sales Performance Analysis
 
 Author: [Uyen Nguyen]  
 Date: September 2024  
