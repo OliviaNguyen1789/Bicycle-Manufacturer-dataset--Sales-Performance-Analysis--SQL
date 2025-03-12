@@ -1,4 +1,4 @@
-# [SQL] Sales Performance Analysis
+# [SQL] Bicycle Manufacturer dataset - Sales Performance Analysis
 
 Author: [Uyen Nguyen]  
 Date: September 2024  
