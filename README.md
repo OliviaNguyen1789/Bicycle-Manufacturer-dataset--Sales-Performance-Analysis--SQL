@@ -7,31 +7,179 @@ Tools Used: SQL
 ---
 
 ## 📑 Table of Contents  
-I. [Introduction](#i-introduction)  
-II. [Dataset Description](#ii-dataset-description)  
-III. [Exploring the Dataset](#iii-exploring-the-dataset)  
-IV. [Final Conclusion & Recommendations](#iv-final-conclusion--recommendations)
+I. [📌 Background & Overview](#-background--overview)  
+II. [📂 Dataset Description](#-dataset-description)  
+III. [📊 Exploring the Dataset](#-exploring-the-dataset)  
+IV. [🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)
 
 ---
 
-## I. Introduction
+## 📌 Background & Overview
 
-This project explores a Bicycle Manufacturer dataset using advanced SQL techniques in Google BigQuery, including sliding windows, common table expressions (CTEs), and date-time manipulation. 
+### 📖 What is this project about?
 
-The analysis focuses on sales performance across subcategories and territories, inventory management, and customer retention. The insights gained will empower stakeholders to make informed strategic decisions and enhance overall business operations.
+The objective of this project is to explore a Bicycle Manufacturer dataset to analyze sales performance across subcategories and territories, inventory management, and customer retention. This involves using advanced SQL techniques in Google BigQuery, including sliding windows, common table expressions (CTEs), and date-time manipulation to extract actionable insights. The findings will empower stakeholders to make informed strategic decisions and enhance overall business operations.
 
-## II. Dataset Description
-
-- Source: The Bicycle Manufacturer dataset is stored in a public Google BigQuery dataset named "adventureworks2019"
-  To access the dataset, we log in to your Google Cloud Platform, navigate to the BigQuery console and search the project "adventureworks2019".
-
-- Data Structure:
-  ![Schema_manufacturing](https://github.com/user-attachments/assets/d7776573-4e04-4b26-b062-1d86980e8774)
+### 👤 Who is this project for?  
+Marketing and Sales teams
 
 
-## III. Exploring the Dataset
+## 📂 Dataset Description
+
+### 🌐 Data Source  
+- The Bicycle Manufacturer dataset is stored in a public Google BigQuery dataset named "adventureworks2019"
+- To access the dataset, we log in to your Google Cloud Platform, navigate to the BigQuery console and search the project "adventureworks2019".
+
+### 🔀  Data Modelling:
+
+There are six tables used in this project to support the analysis and generate insights.
+
+<details>
+<summary>Table 1: Sales.SalesOrderHeader</summary>  
+
+| Name                   | Data type       | Description / Attributes                                                                          |
+|------------------------|-----------------|---------------------------------------------------------------------------------------------------|
+| SalesOrderID           | int             | Primary key. Identity / Auto increment column                                            |
+| RevisionNumber         | tinyint         | Incremental number to track changes to the sales order over time. Default: 0                      |
+| OrderDate              | datetime        | Dates the sales order was created. Default: getdate()                                             |
+| DueDate                | datetime        | Date the order is due to the customer.                                                            |
+| ShipDate               | datetime        | Date the order was shipped to the customer.                                                       |
+| Status                 | tinyint         | Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled Default: 1 |
+| OnlineOrderFlag        | bit             | 0 = Order placed by sales person. 1 = Order placed online by customer. Default: 1                 |
+| SalesOrderNumber       | nvarchar(25)    | Unique sales order identification number. Computed: isnul(N'SO'+CONVERT(nvarchar(23),[SalesOrderID]),N'*** ERROR ***') |
+| PurchaseOrderNumber    | nvarchar(25)    | Customer purchase order number reference.                                                         |
+| AccountNumber          | nvarchar(15)    | Financial accounting number reference.                                                            |
+| CustomerID             | int             | Customer identification number. Foreign key to Customer.BusinessEntityID.                         |
+| SalesPersonID          | int             | Sales person who created the sales order. Foreign key to SalesPerson.BusinessEntityID.            |
+| TerritoryID            | int             | Territory in which the sale was made. Foreign key to SalesTerritory.SalesTerritoryID.             |
+| BillToAddressID        | int             | Customer billing address. Foreign key to Address.AddressID.                                       |
+| ShipToAddressID        | int             | Customer shipping address. Foreign key to Address.AddressID.                                      |
+| ShipMethodID           | int             | Shipping method. Foreign key to ShipMethod.ShipMethodID.                                          |
+| CreditCardID           | int             | Credit card identification number. Foreign key to CreditCard.CreditCardID.                        |
+| CreditCardApprovalCode | varchar(15)     | Approval code provided by the credit card company.                                                |
+| CurrencyRateID         | int             | Currency exchange rate used. Foreign key to CurrencyRate.CurrencyRateID.                          |
+| SubTotal               | money           | Sales subtotal. Computed as SUM(SalesOrderDetail.LineTotal) for the appropriate SalesOrderID. Default: 0.00 |
+| TaxAmt                 | money           | Tax amount. Default: 0.00                                                                         |
+| Freight                | money           | Shipping cost. Default: 0.00                                                                      |
+| TotalDue               | money           | Total due from customer. Computed as Subtotal + TaxAmt + Freight. Computed: isnul(((SubTotal)+(TaxAmt))+(Freight),(0)) |
+| Comment                | nvarchar(128)   | Sales representative comments.                                                                    |
+| rowguid                | uniqueidentifier| ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid() |
+| ModifiedDate           | datetime       | Date and time the record was last updated. Default: getdate()                                     |
+
+</details>
+
+<details>
+<summary>Table 2: Sales.SalesOrderDetail</summary>
+
+| Column Name            | Data Type       | Description/Attributes                                                                   |
+|------------------------|-----------------|------------------------------------------------------------------------------------------|
+| SalesOrderID           | int             | Primary key. Foreign key to SalesOrderHeader.SalesOrderID.                                |
+| SalesOrderDetailID     | int             | Primary key. One incremental unique number per product sold. Identity / Auto increment.   |
+| CarrierTrackingNumber  | nvarchar(25)    | Shipment tracking number supplied by the shipper.                                         |
+| OrderQty               | smallint        | Quantity ordered per product.                                                            |
+| ProductID              | int             | Product sold to customer. Foreign key to Product.ProductID.                               |
+| SpecialOfferID         | int             | Promotional code. Foreign key to SpecialOffer.SpecialOfferID.                             |
+| UnitPrice              | money           | Selling price of a single product.                                                       |
+| UnitPriceDiscount      | money           | Discount amount. Default: 0.0.                                                           |
+| LineTotal              | numeric(38, 6)   | Per product subtotal. Computed as UnitPrice * (1 - UnitPriceDiscount) * OrderQty. Computed: isnull((([UnitPrice]*((1.0-[UnitPriceDiscount])*[OrderQty]),(0.0)) |
+| rowguid                | uniqueidentifier | ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid() |
+| ModifiedDate           | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
+
+</details>
+
+<details>
+<summary>Table 3: Production.Product</summary>
+
+| Name                     | Data type        | Description / Attributes                                                                                      |
+|--------------------------|------------------|---------------------------------------------------------------------------------------------------------------|
+| ProductID                | int              | Primary key for Product records. Identity / Auto increment column                                             |
+| Name                     | nvarchar(50)     | Name of the product.                                                                                          |
+| ProductNumber            | nvarchar(25)     | Unique product identification number.                                                                         |
+| MakeFlag                 | bit              | 0 = Product is purchased, 1 = Product is manufactured in-house. Default: 1                                    |
+| FinishedGoodsFlag        | bit              | 0 = Product is not a salable item. 1 = Product is salable. Default: 1                                         |
+| Color                    | nvarchar(15)     | Product color.                                                                                                |
+| SafetyStockLevel         | smallint         | Minimum inventory quantity.                                                                                   |
+| ReorderPoint             | smallint         | Inventory level that triggers a purchase order or work order.                                                 |
+| StandardCost             | money            | Standard cost of the product.                                                                                 |
+| ListPrice                | money            | Selling price.                                                                                                |
+| Size                     | nvarchar(5)      | Product size.                                                                                                 |
+| SizeUnitMeasureCode      | nchar(3)         | Unit of measure for Size column.                                                                              |
+| WeightUnitMeasureCode    | nchar(3)         | Unit of measure for Weight column.                                                                            |
+| Weight                   | decimal(8, 2)    | Product weight.                                                                                               |
+| DaysToManufacture        | int              | Number of days required to manufacture the product.                                                           |
+| ProductLine              | nchar(2)         | R = Road, M = Mountain, T = Touring, S = Standard                                                             |
+| Class                    | nchar(2)         | H = High, M = Medium, L = Low                                                                                 |
+| Style                    | nchar(2)         | W = Womens, M = Mens, U = Universal                                                                           |
+| ProductSubcategoryID     | int              | Product is a member of this product subcategory. Foreign key to ProductSubCategory.ProductSubCategoryID.       |
+| ProductModelID           | int              | Product is a member of this product model. Foreign key to ProductModel.ProductModelID.                         |
+| SellStartDate            | datetime         | Date the product was available for sale.                                                                      |
+| SellEndDate              | datetime         | Date the product was no longer available for sale.                                                            |
+| DiscontinuedDate         | datetime         | Date the product was discontinued.                                                                            |
+| rowguid                  | uniqueidentifier | ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid()|
+| ModifiedDate             | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
+
+</details>
+
+<details>
+<summary>Table 4: Production.ProductSubcategory </summary> 
+
+| Name                  | Data type        | Description / Attributes                                                                                      |
+|-----------------------|------------------|---------------------------------------------------------------------------------------------------------------|
+| ProductSubcategoryID  | int              | Primary key for ProductSubcategory records. Identity / Auto increment column.                                  |
+| ProductCategoryID     | int              | Product category identification number. Foreign key to ProductCategory.ProductCategoryID.                      |
+| Name                  | nvarchar(50)     | Subcategory description.                                                                                       |
+| rowguid               | uniqueidentifier | ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid()|
+| ModifiedDate          | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
+
+</details>
+
+<details>
+<summary>Table 5: Production.WorkOrder</summary>
+
+| Name                  | Data type        | Description / Attributes                                                                                      |
+|-----------------------|------------------|---------------------------------------------------------------------------------------------------------------|
+| WorkOrderID           | int              | Primary key for WorkOrder records. Identity / Auto increment column                                           |
+| ProductID             | int              | Product identification number. Foreign key to Product.ProductID                                               |
+| OrderQty              | int              | Product quantity to build                                                                                     |
+| StockedQty            | int              | Quantity built and put in inventory. Computed: isnull([OrderQty] - [ScrappedQty], 0)                           |
+| ScrappedQty           | smallint         | Quantity that failed inspection                                                                               |
+| StartDate             | datetime         | Work order start date                                                                                         |
+| EndDate               | datetime         | Work order end date                                                                                           |
+| DueDate               | datetime         | Work order due date                                                                                           |
+| ScrapReasonID         | smallint         | Reason for inspection failure                                                                                 |
+| ModifiedDate          | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
+
+</details>
+
+<details>
+<summary>Table 6: Purchasing.PurchaseOrderHeader</summary>
+
+| Name                | Data type  | Description / Attributes                                                                                              |
+|---------------------|------------|-----------------------------------------------------------------------------------------------------------------------|
+| PurchaseOrderID     | int        | Primary key. Identity / Auto increment column.                                                                         |
+| RevisionNumber      | tinyint    | Incremental number to track changes to the purchase order over time. Default: 0                                        |
+| Status              | tinyint    | Order current status. 1 = Pending; 2 = Approved; 3 = Rejected; 4 = Complete. Default: 1                               |
+| EmployeeID          | int        | Employee who created the purchase order. Foreign key to Employee.BusinessEntityID.                             |
+| VendorID            | int        | Vendor with whom the purchase order is placed. Foreign key to Vendor.BusinessEntityID.                        |
+| ShipMethodID        | int        | Shipping method. Foreign key to ShipMethod.ShipMethodID.                                                      |
+| OrderDate           | datetime   | Purchase order creation date. Default: getdate()                                                              |
+| ShipDate            | datetime   | Estimated shipment date from the vendor.                                                                      |
+| SubTotal            | money      | Purchase order subtotal. Computed as SUM(PurchaseOrderDetail.LineTotal) for the appropriate PurchaseOrderID. Default: 0.00 |
+| TaxAmt              | money      | Tax amount. Default: 0.00                                                                                      |
+| Freight             | money      | Shipping cost. Default: 0.00                                                                                   |
+| TotalDue            | money      | Total due to vendor. Computed as Subtotal + TaxAmt + Freight. Computed: isnull((([SubTotal] + [TaxAmt]) + [Freight]), (0)) |
+| ModifiedDate        | datetime   | Date and time the record was last updated. Default: getdate()                                                  |
+
+</details>
+
+![image](https://github.com/user-attachments/assets/9ddad757-f722-4866-8cfe-d3921379c990)
+
+
+
+## [📊 Exploring the Dataset
 
 ### Query 01: Calculate Quantity of items, Sales value and Order quantity by each Subcategory in  last 12 months
+> Assess the performance of different product categories over time, identify trends, and evaluate which subcategories are driving revenue
 
 ```sql
 WITH the_last_day AS (
@@ -60,6 +208,7 @@ ORDER BY 1 DESC, 2 ASC;
 
 
 ### Query 02: Calculate % YoY growth rate by SubCategory and release top 3 catergories with highest grow rate
+> Identify the top 3 categories with the highest growth rate helps assess long-term performance trends, highlight successful product categories, and provide insights into areas of sustained growth.
 
 ```sql
 WITH 
@@ -109,6 +258,7 @@ ORDER BY ranking;
 
 
 ### Query 03: Ranking Top 3 TeritoryID with biggest Order quantity of every year. 
+>  Identify the most profitable and active regions, thereby allowing businesses to focus on high-performing territories, allocate resources effectively, and tailor marketing and sales strategies to optimize performance in those regions.
 
 ```sql
 WITH count_order AS (
@@ -140,6 +290,7 @@ It is essential to examine the causes of this downturn and implement appropriate
 
 
 ### Query 04: Calculate Total Discount Cost belongs to Seasonal Discount for each SubCategory
+> Evaluate the financial impact of seasonal promotions on different product categories.
 
 ```sql
 SELECT 
@@ -162,6 +313,7 @@ GROUP BY 1,2;
 
 
 ### Query 05: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis) 
+> Measure customer loyalty and the effectiveness of order fulfillment
 
 ```sql
 WITH
@@ -226,6 +378,7 @@ ORDER BY
 
 
 ### Query 06: Trend of Stock level & MoM diff % by all product in 2011. If % growth rate is null then 0.
+> Identify inventory fluctuations.
 
 ```sql
 WITH get_stock_qty AS (
@@ -258,6 +411,7 @@ WHERE Stock_pre >0;
 
 
 ### Query 07: Calculate Ratio of Stock / Sales in 2011 by product name, by month
+> The stock-to-sales ratio highlights inefficiencies in the company's inventory management. Low-selling products have excessively high ratios, driving up inventory costs, while high-selling products have low or zero ratios, increasing the risk of stockouts and lost sales.
 
 ```sql
 WITH sales_info AS (
@@ -299,10 +453,10 @@ WITH sales_info AS (
 
 <img width="825" alt="Screen Shot 2025-03-04 at 10 15 41 AM" src="https://github.com/user-attachments/assets/3cef9e2e-6833-4f9a-84af-8ce39c288b18" />
 
-🚀 The stock-to-sales ratio highlights inefficiencies in the company's inventory management. Low-selling products have excessively high ratios, driving up inventory costs, while high-selling products have low or zero ratios, increasing the risk of stockouts and lost sales. To enhance capital efficiency, the company should refine its inventory strategy, focusing on balancing stock levels.
-
+🚀 The stock-to-sales ratios reveal significant inventory imbalances across products. High-end mountain frames show excessive stock levels (ratios 10-27) compared to sales, while popular road bikes maintain healthier ratios (1.1-1.5). This suggests potential overproduction or slow turnover for certain mountain frames. The company should reassess its inventory management strategy, particularly for high-ratio items, to optimize stock levels and improve capital efficiency.
 
 ### Query 08: Number of order and value at Pending status in 2014
+> Pending orders can reflect the efficiency and performance of our vendors.
 
 ```sql
 SELECT 
@@ -321,7 +475,7 @@ GROUP BY 1,2;
 🚀 In 2014, there were 224 pending orders totaling $3,873,579, with an average order value of $17,292.76. This  indicates that pending orders may involve bulk purchases or high-value transactions. Given the significant impact on revenue and customer satisfaction, it is essential to further investigate the factors causing delays.
 
 
-## IV. Final Conclusion & Recommendations 
+## 🔎 Final Conclusion & Recommendations
 
 This analysis provides valuable insights into sales performance across products and regions, inventory management, and customer retention. It enables the bicycle manufacturer to identify strengths and weaknesses, allowing them to leverage their strengths and minimize weaknesses to enhance overall business performance.
 
