@@ -484,10 +484,10 @@ This analysis provides valuable insights into sales performance across products 
 
 **Recommendations:**
 
-- Analyze the strategies that led to success in Territories 4, 6, and 1, and replicate them in underperforming regions to boost overall sales.
-- Reevaluate the effectiveness of promotional campaigns, such as the Seasonal Discounts for Helmets, to ensure they drive sales without causing a disproportionate increase in discount costs.
-- Prioritize customer retention by enhancing the customer experience and providing additional value after the initial purchase to reduce churn.
-- Focus on improving demand forecasting and optimizing just-in-time inventory cycles to reduce stock imbalances, lower holding costs, and avoid stockouts of high-demand items.
+- Analyze the strategies that led to success in Territories 4, 6, and 1, and **replicate them in underperforming regions** to boost overall sales.
+- **Reevaluate the effectiveness of promotional campaigns**, such as the Seasonal Discounts for Helmets, to ensure they drive sales without causing a disproportionate increase in discount costs.
+- **Prioritize customer retention** by enhancing the customer experience and providing additional value after the initial purchase to reduce churn.
+- Focus on improving demand **forecasting and optimizing just-in-time inventory cycles** to reduce stock imbalances, lower holding costs, and avoid stockouts of high-demand items.
 - Conduct a thorough analysis to identify the causes of the sharp sales decline in Q2 2014 and address pending orders to implement prompt and effective solutions.
 
 
