@@ -1,7 +1,7 @@
 
 <img width="1000" alt="Screen Shot 2025-03-15 at 10 42 16 PM" src="https://github.com/user-attachments/assets/955a7e19-c7a4-4074-bb8a-3a6feb51d1b1" />
 
-# Bicycle Manufacturer dataset - Sales Performance Analysis | SQL
+# Project Title: Bicycle Manufacturer dataset - Sales Performance Analysis | SQL
 
 Author: [Uyen Nguyen]  
 Date: September 2024  
