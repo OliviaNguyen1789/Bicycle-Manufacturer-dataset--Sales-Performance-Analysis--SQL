@@ -3,7 +3,7 @@
 
 # Project Title: Bicycle Manufacturer dataset - Sales Performance Analysis | SQL
 
-Author: [Uyen Nguyen]  
+Author: [Olivia Nguyen]  
 Date: September 2024  
 Tools Used: SQL 
 
